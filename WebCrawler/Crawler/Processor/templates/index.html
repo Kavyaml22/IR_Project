@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Processor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bdc3c7;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        #queryForm {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-right: 0.5px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 7px;
+            margin: 0 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #719d73;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #719d73;
+        }
+
+        #resultContainer {
+            text-align: center;
+        }
+
+        #resultList {
+            list-style-type: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+
+        function displayResults(results) {
+            var resultList = document.getElementById("resultList");
+            resultList.innerHTML = "";
+            results.forEach(function(result) {
+                var listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <p><strong>Authorname:</strong> ${result.Authorname}</p>
+                    <p><strong>Text:</strong> ${result.text}</p>
+                    <p><strong>Tags:</strong> ${result.tags.join(', ')}</p>
+                    <p><strong>Cosine Similarity Score:</strong> ${result.cosine_similarity_score}</p>
+                `;
+                resultList.appendChild(listItem);
+            });
+        }
+
+        function search() {
+            var query = document.getElementById("query").value;
+            fetch('/query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ query: query })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showAlert(data.error);
+                } else {
+                    displayResults(data);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello, Welcome to the Query Processor!!</h1>
+    <form id="queryForm">
+        <label for="query">Enter your query:</label>
+        <input type="text" id="query" name="query">
+        <button type="button" onclick="search()">Submit</button>
+    </form>
+
+    <div id="resultContainer">
+        <h2>Search Results are:</h2>
+        <ul id="resultList"></ul>
+    </div>
+</body>
+</html>
