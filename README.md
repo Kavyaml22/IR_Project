@@ -302,13 +302,16 @@ With the use of cosine similarity scores, this code configures a Flask web appli
 
  - "Goodreads Quotes," Goodreads, https://www.goodreads.com/quotes.
 
-#### 2. Also, I have taken the help from some AI tools such as chatgpt,copilot and perplexity for constructing an inverted index in pickel format.
+#### 2. Also, I have taken the help from some AI tools such as chatgpt,copilot and perplexity for constructing an inverted index in pickel format and printed it in terminal.
 
  -  "ChatGPT," OpenAI, "https://chat.openai.com/c/0693a1dd-8f18-4541-b78e-a6cdbf408e3e".
+   
+ -   "Gemini",  OpenAI, "https://gemini.google.com/app".
 
  -  "Perplexity," OpenAI, "https://www.perplexity.ai/search/For-a-fixed-rBNiypq4TpaNJbjK0Lyjcg".
+   
 
 #### 3. I did my DBO project using flask. So, I have used the knowledge which i gained durig that project. Also, I learnt the flask from the following youtube link:
 
- - freecodecamp.org. "Flask tutorial," YouTube video, freecodecamp.org, https://youtu.be/Qr4QMBUPxWo?si=H-vWwj3BeSmJrt_a.
+ - freecodecamp.org, "Flask Course - Python web application developmenyt",  YouTube video, "https://youtu.be/Qr4QMBUPxWo?si=H-vWwj3BeSmJrt_a".
 
