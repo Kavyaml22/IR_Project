@@ -199,7 +199,7 @@ Run the respective scripts or Flask application to execute the functionalities.
   Indexer ( Scikit-Learn based):
    - Success: Using the received HTML material, the indexer successfully creates an inverted index, computes TF-IDF scores, and saves the index in a pickle file.
    - Failure: The indexer may run into problems with document processing, text extraction, or index generation, which could result in an erroneous or insufficient index.
-   - Outputs: The Query Processor component uses the pickle file format that the indexer produces as its output, which is the inverted index.
+   - Outputs: The Query Processor component uses the pickle file format that the indexer produces as its output in the terminal itself, which is the inverted index.
    - Caveats/Cautions: The indexer should be built with memory utilization, disk space, and indexing efficiency in mind in order to properly manage large-scale indexing.
 
 Flask-based Query Processor:
@@ -214,7 +214,7 @@ Flask-based Query Processor:
 
 #### - Outputs: 
  - Crawler: Downloaded web documents in HTML format.
- - Indexer: Printed Inverted inedx , Inverted index in pickle format, TF-IDF matrix shape, Query vector shape, cosine similarity shape and cosine similarity score.
+ - Indexer: Printed Inverted inedx , Inverted index in pickle format in terminal itself, TF-IDF matrix shape, Query vector shape, cosine similarity shape and cosine similarity score.
  - Processor: JSON-formatted top-ranked search results based on user queries. In this Project it has printed authorname, text, tags based on the cosine similarity score for the entered query.
 
 #### - Caveats/Cautions:
@@ -302,13 +302,16 @@ With the use of cosine similarity scores, this code configures a Flask web appli
 
  - "Goodreads Quotes," Goodreads, https://www.goodreads.com/quotes.
 
-#### 2. Also, I have taken the help from some AI tools such as chatgpt,copilot and perplexity for constructing an inverted index in pickel format.
+#### 2. Also, I have taken the help from some AI tools such as chatgpt,copilot and perplexity for constructing an inverted index in pickel format and printed it in terminal.
 
  -  "ChatGPT," OpenAI, "https://chat.openai.com/c/0693a1dd-8f18-4541-b78e-a6cdbf408e3e".
+   
+ -   "Gemini",  OpenAI, "https://gemini.google.com/app".
 
  -  "Perplexity," OpenAI, "https://www.perplexity.ai/search/For-a-fixed-rBNiypq4TpaNJbjK0Lyjcg".
+   
 
 #### 3. I did my DBO project using flask. So, I have used the knowledge which i gained durig that project. Also, I learnt the flask from the following youtube link:
 
- - freecodecamp.org. "Flask tutorial," YouTube video, freecodecamp.org, https://youtu.be/Qr4QMBUPxWo?si=H-vWwj3BeSmJrt_a.
+ - freecodecamp.org, "Flask Course - Python web application developmenyt",  YouTube video, "https://youtu.be/Qr4QMBUPxWo?si=H-vWwj3BeSmJrt_a".
 
